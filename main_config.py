@@ -1,5 +1,8 @@
 ### MAIN CONFIG
-# images_path = "D:/Repositories/Impulseai/t-raj/dataset/VIS_cocoformat/images"
+
+# This config is based to coco128
+
+# path to the images and labels
 images_path = "D:/Repositories/Impulseai/t-raj/dataset/coco128/images/train2017"
 labels_path = "D:/Repositories/Impulseai/t-raj/dataset/coco128/labels/train2017"
 
@@ -8,6 +11,7 @@ coco_train = "D:/Repositories/Impulseai/t-raj/centernet repos/mm-detection/coco1
 coco_val = "D:/Repositories/Impulseai/t-raj/centernet repos/mm-detection/coco128-to-json/coco_val.json"
 coco_eval = "D:/Repositories/Impulseai/t-raj/centernet repos/mm-detection/coco128-to-json/coco_eval.json"
 
+# classes
 class_names = ('person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck', 'boat', 'traffic light',
          'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse', 'sheep', 'cow',
          'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella', 'handbag', 'tie', 'suitcase', 'frisbee',
@@ -18,8 +22,10 @@ class_names = ('person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'tra
          'microwave', 'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear',
          'hair drier', 'toothbrush',)
 
+# number of classes
 num_class = 80
 
+# palettes for bounding boxes
 palettes = [(220, 20, 60), (119, 11, 32), (0, 0, 142), (0, 0, 230),
             (106, 0, 228), (0, 60, 100), (0, 80, 100), (0, 0, 70),
             (0, 0, 192), (250, 170, 30), (100, 170, 30), (220, 220, 0),
@@ -42,9 +48,21 @@ palettes = [(220, 20, 60), (119, 11, 32), (0, 0, 142), (0, 0, 230),
             (95, 54, 80), (128, 76, 255), (201, 57, 1), (246, 0, 122),
             (191, 162, 208)]
 
-
+# path for pretrained model, you can comment if you want it to be automatically downloaded and start from scratch
+# this one is trained using coco dataset
 pretrained_model_path = "D:/Repositories/Impulseai/t-raj/centernet repos/mm-detection/centernet_resnet18_dcnv2_140e_coco_20210702_155131-c8cd631f.pth"
 
+# default config to run for training
+model_config = "/configs/user_config/centernet_resnet18_dcnv2_140e_coco.py"
+
+# random seed
+seed = 1
+
+# Working Directory, where we will save the models, logs and configs
+# if None, it will create a dir called 'work_dir'
+work_dir = None
+
+# splits of training, validation and evaluation
 training_split = 0.7
 validation_split = 0.2
 evaluation_split = 0.1
