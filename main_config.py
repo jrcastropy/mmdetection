@@ -7,6 +7,9 @@ images_path = "D:/Repositories/Impulseai/t-raj/dataset/coco128/images/train2017"
 labels_path = "D:/Repositories/Impulseai/t-raj/dataset/coco128/labels/train2017"
 
 # file name and full path to where to save json files of cocoformat
+# below are the filenames you wish to save your json file.
+# so if you have coco128 as your setup for the dataset, just type where you want to save the json file and
+# the code will do everything for you.
 coco_train = "D:/Repositories/Impulseai/t-raj/centernet repos/mm-detection/coco128-to-json/coco_train.json"
 coco_val = "D:/Repositories/Impulseai/t-raj/centernet repos/mm-detection/coco128-to-json/coco_val.json"
 coco_eval = "D:/Repositories/Impulseai/t-raj/centernet repos/mm-detection/coco128-to-json/coco_eval.json"

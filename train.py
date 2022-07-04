@@ -28,6 +28,8 @@ def parse_args():
     parser.add_argument('config', help='train config file path')
     parser.add_argument('--work-dir', default=mc.work_dir, help='the dir to save logs and models')
     parser.add_argument(
+        '--convert-to-json', action='store_true', help='if the dataset is in coco128 version, convert them to json files first')
+    parser.add_argument(
         '--resume-from', help='the checkpoint file to resume from')
     parser.add_argument(
         '--auto-resume',
@@ -108,8 +110,11 @@ def parse_args():
 import convert_coco
 
 def main():
-    convert_coco.convert_to_coco()
+    
     args = parse_args()
+
+    if args.convert_to_json:
+        convert_coco.convert_to_coco()
 
     cfg = Config.fromfile(args.config)
 
